@@ -1,0 +1,103 @@
+﻿$(document).ready(function () {
+    var table = $('#welfareDepatment_tbl').DataTable({
+        scrollY: 300,
+        scrollX: true,
+        scrollCollapse: true,
+        paging: false,
+        fixedColumns: true
+    });
+
+    $('button#increaseLeft').on('click', function () {
+        var currLeft = table.fixedColumns().left();
+        if (currLeft < 9) {
+            table.fixedColumns().left(currLeft + 1);
+            $('#click-output').prepend(
+                '<div>New Left: ' + (+currLeft + 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#decreaseLeft').on('click', function () {
+        var currLeft = table.fixedColumns().left();
+        if (currLeft > 0) {
+            table.fixedColumns().left(currLeft - 1);
+            $('#click-output').prepend(
+                '<div>New Left: ' + (+currLeft - 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#increaseRight').on('click', function () {
+        var currRight = table.fixedColumns().right();
+        if (currRight < 9) {
+            table.fixedColumns().right(currRight + 1);
+            $('#click-output').prepend(
+                '<div>New Right: ' + (+currRight + 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#decreaseRight').on('click', function () {
+        var currRight = table.fixedColumns().right();
+        if (currLeft > 0) {
+            table.fixedColumns().right(currRight - 1);
+            $('#click-output').prepend(
+                '<div>New Right: ' + (+currRight - 1) + '</div>'
+            );
+        }
+    })
+});
+
+
+
+$(document).ready(function () {
+    var table = $('#welfareHR_tbl').DataTable({
+        scrollY: 300,
+        scrollX: true,
+        scrollCollapse: true,
+        paging: false,
+        fixedColumns: true
+    });
+
+    $('button#increaseLeft').on('click', function () {
+        var currLeft = table.fixedColumns().left();
+        if (currLeft < 9) {
+            table.fixedColumns().left(currLeft + 1);
+            $('#click-output').prepend(
+                '<div>New Left: ' + (+currLeft + 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#decreaseLeft').on('click', function () {
+        var currLeft = table.fixedColumns().left();
+        if (currLeft > 0) {
+            table.fixedColumns().left(currLeft - 1);
+            $('#click-output').prepend(
+                '<div>New Left: ' + (+currLeft - 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#increaseRight').on('click', function () {
+        var currRight = table.fixedColumns().right();
+        if (currRight < 9) {
+            table.fixedColumns().right(currRight + 1);
+            $('#click-output').prepend(
+                '<div>New Right: ' + (+currRight + 1) + '</div>'
+            );
+        }
+    })
+
+    $('button#decreaseRight').on('click', function () {
+        var currRight = table.fixedColumns().right();
+        if (currLeft > 0) {
+            table.fixedColumns().right(currRight - 1);
+            $('#click-output').prepend(
+                '<div>New Right: ' + (+currRight - 1) + '</div>'
+            );
+        }
+    })
+});
+
+
