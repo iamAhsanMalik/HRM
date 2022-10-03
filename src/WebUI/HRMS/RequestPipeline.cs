@@ -1,9 +1,10 @@
-﻿namespace HRMS;
+﻿using Infrastructure.Persistence.Seeds;
+
+namespace HRMS;
 public static class RequestPipeline
 {
     public static IApplicationBuilder AddRequestPipeline(this IApplicationBuilder middlewares)
     {
-
         middlewares.UseHttpsRedirection();
         middlewares.UseStaticFiles();
         // middlewares.UseCookiePolicy();

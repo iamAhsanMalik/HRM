@@ -1,4 +1,6 @@
-﻿namespace HRMS;
+﻿using Microsoft.AspNetCore.Mvc.Authorization;
+
+namespace HRMS;
 
 public static class DependencyInjection
 {
@@ -9,7 +11,7 @@ public static class DependencyInjection
 
         //var authPolicy = options => options.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()))
         // Add services to the container.
-        services.AddControllersWithViews().AddJsonOptions(options =>
+        services.AddControllersWithViews(options => options.Filters.Add(new AuthorizeFilter(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build()))).AddJsonOptions(options =>
                 options.JsonSerializerOptions.PropertyNamingPolicy = null);
         services.AddDistributedMemoryCache();
 
