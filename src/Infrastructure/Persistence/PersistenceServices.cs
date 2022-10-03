@@ -4,7 +4,7 @@ internal static class PersistenceServices
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
         // DB Context Setting
-        services.AddDbContext<HRMContext>(options =>
+        services.AddDbContext<HRMSContext>(options =>
             options.UseSqlServer(configuration.GetConnectionString(ConnectionString.DefaultConnection)));
 
         // Authentication Configurations Options
@@ -29,7 +29,7 @@ internal static class PersistenceServices
         });
 
         // Identity Services
-        services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HRMContext>().AddDefaultTokenProviders();
+        services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<HRMSContext>().AddDefaultTokenProviders();
 
         services.AddAuthentication()
            .AddFacebook(facebookOptions =>

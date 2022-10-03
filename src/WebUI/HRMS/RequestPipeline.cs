@@ -1,4 +1,4 @@
-﻿namespace WebUI;
+﻿namespace HRMS;
 public static class RequestPipeline
 {
     public static IApplicationBuilder AddRequestPipeline(this IApplicationBuilder middlewares)
