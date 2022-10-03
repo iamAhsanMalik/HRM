@@ -1,7 +1,7 @@
 ﻿namespace Infrastructure.Persistence.DataContext;
-public class HRMContext : IdentityDbContext<ApplicationUser>
+public class HRMSContext : IdentityDbContext<ApplicationUser>
 {
-    public HRMContext(DbContextOptions<HRMContext> options) : base(options)
+    public HRMSContext(DbContextOptions<HRMSContext> options) : base(options)
     {
 
     }
