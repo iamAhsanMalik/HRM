@@ -1,3 +1,5 @@
+using HRMS.Models;
+
 namespace HRMS.Controllers;
 
 [Authorize]

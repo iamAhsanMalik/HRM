@@ -1,0 +1,75 @@
+﻿@model LoginDTO
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="~/dha_theme/bootstrap/bootstrap-4.5.2.css" rel="stylesheet" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: dodgerblue;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        .login-main {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login_section {
+            background-color: #ffffff;
+            padding: 5rem 2rem;
+            border-radius: 20px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid login-main">
+        <div class="w-50 m-auto login_section mt-4">
+            <div class="formCover">
+                <div class="lms-logo text-center">
+                    <img class="mt3" src="~/dha_theme/images/dha_quetta_logo.png" />
+                </div>
+
+                <div class="form-layout">
+                    <form asp-action="Login">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <div class="login-btn-postion text-center">
+                                <button type="submit" class="btn btn-primary px-5">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
